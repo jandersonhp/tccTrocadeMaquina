@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const slides = document.querySelectorAll('.slide');
     const indicators = document.querySelectorAll('.indicator');
     const prevBtn = document.getElementById('prev-btn');
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         currentSlide = n;
-        
+
         // Re-inicializa os itens expansíveis para o slide atual
         initExpandableItems();
     }
@@ -25,15 +25,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // FUNCIONALIDADE DE EXPANSÃO
     function initExpandableItems() {
         const expandableItems = document.querySelectorAll('.expandable-item');
-        
+
         expandableItems.forEach(item => {
             const header = item.querySelector('.expandable-header');
-            
+
             // Remove event listeners anteriores para evitar duplicação
             header.replaceWith(header.cloneNode(true));
-            
+
             const newHeader = item.querySelector('.expandable-header');
-            
+
             newHeader.addEventListener('click', () => {
                 // Fecha todos os outros itens
                 expandableItems.forEach(otherItem => {
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         otherItem.classList.remove('active');
                     }
                 });
-                
+
                 // Abre/fecha o item clicado
                 item.classList.toggle('active');
             });
