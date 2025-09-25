@@ -1,0 +1,33 @@
+/* Font Awesome 6.4.0 - Ícones expandidos */
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url("./webfonts/fa-solid-900.woff2") format("woff2"),
+       url("./webfonts/fa-solid-900.woff") format("woff");
+}
+
+.fas,
+.fa-solid {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+}
+
+/* Ícones usados no seu HTML */
+.fa-exchange-alt:before { content: "\f362"; }
+.fa-thumbs-up:before { content: "\f164"; }
+.fa-thumbs-down:before { content: "\f165"; }
+.fa-search:before { content: "\f002"; }
+.fa-exclamation-triangle:before { content: "\f071"; }
+.fa-check-circle:before { content: "\f058"; }
+.fa-chevron-left:before { content: "\f053"; }
+.fa-chevron-right:before { content: "\f054"; }
+.fa-project-diagram:before { content: "\f542"; }
+.fa-balance-scale:before { content: "\f24e"; }
+.fa-bolt:before { content: "\f0e7"; }
+.fa-smile:before { content: "\f118"; }
+.fa-cogs:before { content: "\f085"; }
+.fa-redo:before { content: "\f01e"; }
+.fa-money-bill-wave:before { content: "\f53a"; }
+.fa-chart-line-down:before { content: "\f64d"; }
