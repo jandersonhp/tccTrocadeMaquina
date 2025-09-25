@@ -378,6 +378,103 @@ li:before {
     color: #ffb800;
 }
 
+/* ESTILOS PARA LISTA EXPANSÍVEL */
+.expandable-list {
+    margin-top: 20px;
+}
+
+.expandable-item {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border-left: 4px solid #ffb800;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.expandable-item.active {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.expandable-header {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #00a859;
+    transition: all 0.3s ease;
+}
+
+.expandable-header:hover {
+    background: rgba(0, 168, 89, 0.05);
+}
+
+.expandable-header i:first-child {
+    margin-right: 15px;
+    font-size: 1.4rem;
+    width: 30px;
+    text-align: center;
+}
+
+.expandable-header i:last-child {
+    transition: transform 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.expandable-item.active .expandable-header i:last-child {
+    transform: rotate(180deg);
+}
+
+.expandable-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 20px;
+}
+
+.expandable-item.active .expandable-content {
+    max-height: 500px;
+    padding: 0 20px 20px 65px;
+}
+
+.expandable-content p {
+    margin: 15px 0 0 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.expandable-content ul {
+    margin: 15px 0 0 0;
+}
+
+.expandable-content li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    padding-left: 0;
+    background: none;
+    border: none;
+    padding: 5px 0;
+}
+
+.expandable-content li:before {
+    content: "•";
+    color: #ff6d00;
+    font-size: 1.5rem;
+    position: relative;
+    top: 2px;
+    margin-right: 10px;
+}
+
+.expandable-content strong {
+    color: #00a859;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
     .slide {
@@ -421,6 +518,28 @@ li:before {
     
     .logo {
         width: 120px;
+    }
+    
+    .expandable-header {
+        padding: 15px;
+        font-size: 1.1rem;
+    }
+    
+    .expandable-header i:first-child {
+        font-size: 1.2rem;
+        margin-right: 10px;
+    }
+    
+    .expandable-content p {
+        font-size: 1rem;
+    }
+    
+    .expandable-content li {
+        font-size: 0.9rem;
+    }
+    
+    .expandable-item.active .expandable-content {
+        padding: 0 15px 15px 45px;
     }
 }
 

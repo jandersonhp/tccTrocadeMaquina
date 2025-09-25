@@ -17,6 +17,35 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         currentSlide = n;
+        
+        // Re-inicializa os itens expansíveis para o slide atual
+        initExpandableItems();
+    }
+
+    // FUNCIONALIDADE DE EXPANSÃO
+    function initExpandableItems() {
+        const expandableItems = document.querySelectorAll('.expandable-item');
+        
+        expandableItems.forEach(item => {
+            const header = item.querySelector('.expandable-header');
+            
+            // Remove event listeners anteriores para evitar duplicação
+            header.replaceWith(header.cloneNode(true));
+            
+            const newHeader = item.querySelector('.expandable-header');
+            
+            newHeader.addEventListener('click', () => {
+                // Fecha todos os outros itens
+                expandableItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Abre/fecha o item clicado
+                item.classList.toggle('active');
+            });
+        });
     }
 
     nextBtn.addEventListener('click', () => {
@@ -45,6 +74,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Inicializa a apresentação
     showSlide(0);
-
 });
