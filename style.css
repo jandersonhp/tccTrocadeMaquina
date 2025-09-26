@@ -49,26 +49,11 @@ body {
     z-index: -1;
 }
 
-.slide-1 .slide-overlay {
-    background: linear-gradient(135deg, rgba(0, 168, 89, 0.85) 0%, rgba(255, 184, 0, 0.8) 100%);
-}
-
-.slide-2 .slide-overlay {
-    background: linear-gradient(135deg, rgba(0, 168, 89, 0.85) 0%, rgba(255, 184, 0, 0.8) 100%);
-}
-
-.slide-3 .slide-overlay {
-    background: linear-gradient(135deg, rgba(0, 168, 89, 0.85) 0%, rgba(255, 184, 0, 0.8) 100%);
-}
-
-.slide-4 .slide-overlay {
-    background: linear-gradient(135deg, rgba(0, 168, 89, 0.85) 0%, rgba(255, 184, 0, 0.8) 100%);
-}
-
-.slide-5 .slide-overlay {
-    background: linear-gradient(135deg, rgba(0, 168, 89, 0.85) 0%, rgba(255, 184, 0, 0.8) 100%);
-}
-
+.slide-1 .slide-overlay,
+.slide-2 .slide-overlay,
+.slide-3 .slide-overlay,
+.slide-4 .slide-overlay,
+.slide-5 .slide-overlay,
 .slide-6 .slide-overlay {
     background: linear-gradient(135deg, rgba(0, 168, 89, 0.85) 0%, rgba(255, 184, 0, 0.8) 100%);
 }
@@ -86,136 +71,6 @@ h1 {
     border-bottom: 3px solid #ffb800;
     padding-bottom: 10px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-ul {
-    list-style-type: none;
-    margin-left: 10px;
-}
-
-li {
-    margin-bottom: 20px;
-    font-size: 1.3rem;
-    position: relative;
-    padding-left: 40px;
-    line-height: 1.5;
-}
-
-li:before {
-    content: "•";
-    color: #ff6d00;
-    font-size: 2.5rem;
-    position: absolute;
-    left: 0;
-    top: -10px;
-}
-
-.pros li:before {
-    content: "✓";
-    color: #00a859;
-    font-size: 2rem;
-    top: -5px;
-}
-
-.cons li:before {
-    content: "⚠";
-    color: #e53935;
-    font-size: 1.8rem;
-    top: -5px;
-}
-
-/* Layout de duas colunas */
-.two-columns {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    margin-top: 30px;
-}
-
-.column h3 {
-    color: #00a859;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    font-size: 1.4rem;
-    border-bottom: 2px solid #ffb800;
-    padding-bottom: 10px;
-}
-
-.column h3 i {
-    margin-right: 12px;
-    font-size: 1.6rem;
-}
-
-.negative h3 {
-    color: #e53935;
-}
-
-.cons-column h3 {
-    color: #e53935;
-}
-
-/* Estilos específicos para as colunas */
-.positive li:before {
-    content: "✓";
-    color: #00a859;
-    font-size: 2rem;
-    top: -5px;
-}
-
-.negative li:before {
-    content: "⚠";
-    color: #e53935;
-    font-size: 1.8rem;
-    top: -5px;
-}
-
-.pros-column li:before {
-    content: "✓";
-    color: #00a859;
-    font-size: 2rem;
-    top: -5px;
-}
-
-.cons-column li:before {
-    content: "⚠";
-    color: #e53935;
-    font-size: 1.8rem;
-    top: -5px;
-}
-
-.column ul {
-    margin-left: 0;
-}
-
-.column li {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    padding-left: 35px;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 12px 15px 12px 45px;
-    border-radius: 8px;
-    border-left: 4px solid transparent;
-}
-
-.positive li {
-    border-left-color: #00a859;
-    background: rgba(0, 168, 89, 0.1);
-}
-
-.negative li {
-    border-left-color: #e53935;
-    background: rgba(229, 57, 53, 0.1);
-}
-
-.pros-column li {
-    border-left-color: #00a859;
-    background: rgba(0, 168, 89, 0.1);
-}
-
-.cons-column li {
-    border-left-color: #e53935;
-    background: rgba(229, 57, 53, 0.1);
 }
 
 .navigation {
@@ -294,6 +149,7 @@ li:before {
     backdrop-filter: blur(5px);
 }
 
+/* Estilo especial para slide 1 e 6 */
 .slide-1 .content-box,
 .slide-6 .content-box {
     background-color: rgba(0, 0, 0, 0.8);
@@ -313,47 +169,52 @@ li:before {
     color: #ffb800;
 }
 
-/* Imagens de fundo para cada slide */
+/* Slide 2 e 3 com 2 colunas expansíveis */
+.slide-2 .expandable-list,
+.slide-3 .expandable-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.expandable-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+@media (max-width: 768px) {
+
+    .slide-2 .expandable-list,
+    .slide-3 .expandable-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Imagens de fundo */
 .slide-1 {
     background-image: url("./assets/bgmaquinas.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 .slide-2 {
     background-image: url("./assets/05-1.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 .slide-3 {
     background-image: url("./assets/04.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 .slide-4 {
     background-image: url("./assets/05-1.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 .slide-5 {
     background-image: url("./assets/00.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 .slide-6 {
-    background-image: url("./assets/bgmaquinas.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-image: url("./assets/bgmaquinas.jpg")
 }
 
 .logo {
@@ -382,7 +243,7 @@ li:before {
     color: #ffb800;
 }
 
-/* ESTILOS PARA LISTA EXPANSÍVEL */
+/* LISTA EXPANSÍVEL */
 .expandable-list {
     margin-top: 20px;
 }
@@ -397,9 +258,27 @@ li:before {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+.expandable-item.positive {
+    border-left-color: #00a859;
+    background: rgba(0, 168, 89, 0.1);
+}
+
+.expandable-item.negative {
+    border-left-color: #e53935;
+    background: rgba(229, 57, 53, 0.1);
+}
+
 .expandable-item.active {
     background: rgba(255, 255, 255, 0.95);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.expandable-item.positive.active {
+    background: rgba(0, 168, 89, 0.15);
+}
+
+.expandable-item.negative.active {
+    background: rgba(229, 57, 53, 0.15);
 }
 
 .expandable-header {
@@ -410,12 +289,27 @@ li:before {
     cursor: pointer;
     font-weight: 600;
     font-size: 1.2rem;
-    color: #00a859;
     transition: all 0.3s ease;
+}
+
+.expandable-item.positive .expandable-header {
+    color: #00a859;
+}
+
+.expandable-item.negative .expandable-header {
+    color: #e53935;
 }
 
 .expandable-header:hover {
     background: rgba(0, 168, 89, 0.05);
+}
+
+.expandable-item.positive .expandable-header:hover {
+    background: rgba(0, 168, 89, 0.1);
+}
+
+.expandable-item.negative .expandable-header:hover {
+    background: rgba(229, 57, 53, 0.1);
 }
 
 .expandable-header i:first-child {
@@ -460,10 +354,9 @@ li:before {
 .expandable-content li {
     font-size: 1rem;
     margin-bottom: 10px;
-    padding-left: 0;
+    padding: 5px 0;
     background: none;
     border: none;
-    padding: 5px 0;
 }
 
 .expandable-content li:before {
@@ -479,7 +372,25 @@ li:before {
     color: #00a859;
 }
 
-/* Responsividade */
+.slide-1 .expandable-item,
+.slide-6 .expandable-item {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.slide-1 .expandable-content p,
+.slide-6 .expandable-content p,
+.slide-1 .expandable-content li,
+.slide-6 .expandable-content li {
+    color: white;
+}
+
+.slide-1 .expandable-content strong,
+.slide-6 .expandable-content strong {
+    color: #ffb800;
+}
+
+/* RESPONSIVIDADE */
 @media (max-width: 768px) {
     .slide {
         padding: 40px 20px;
@@ -489,26 +400,8 @@ li:before {
         font-size: 2rem;
     }
 
-    li {
-        font-size: 1.1rem;
-    }
-
     .content-box {
         padding: 25px;
-    }
-
-    .two-columns {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-
-    .column h3 {
-        font-size: 1.2rem;
-    }
-
-    .column li {
-        font-size: 1rem;
-        padding: 10px 12px 10px 40px;
     }
 
     .navigation {
