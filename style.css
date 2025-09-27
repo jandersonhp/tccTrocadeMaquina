@@ -170,8 +170,8 @@ h1 {
 }
 
 /* Slide 2 e 3 com 2 colunas expansíveis */
-.slide-2 .expandable-list,
-.slide-3 .expandable-list {
+.slide-4 .expandable-list,
+.slide-5 .expandable-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
